@@ -7,22 +7,15 @@ import (
 )
 
 func main() {
-	// 使用默认参数创建Watermarker
-	wm1, err := textWatermark.NewWatermarker()
-	if err != nil {
-		fmt.Println("创建Watermarker出错:", err)
-		return
-	}
-
 	// 使用自定义参数创建Watermarker
 	customColor := color.RGBA{R: 255, G: 0, B: 0, A: 80} // 红色
-	wm2, err := textWatermark.NewWatermarker(
-		textWatermark.WithWatermarkString("自定义水印"),
-		textWatermark.WithWatermarkColor(customColor),
-		textWatermark.WithSkew(30),
-		textWatermark.WithStepX(250),
-		textWatermark.WithStepY(130),
-		textWatermark.WithFontPath("customFont.ttf"),
+	wm, err := textWatermark.NewWatermarker(
+		textWatermark.WithWatermarkString("自定义水印"),    // 水印文字
+		textWatermark.WithWatermarkColor(customColor), // 水印颜色
+		textWatermark.WithSkew(30),                    // 倾斜角度
+		textWatermark.WithStepX(250),                  // 水平间距
+		textWatermark.WithStepY(130),                  // 垂直间距
+		textWatermark.WithFontPath("customFont.ttf"),  // 字体文件路径
 	)
 	if err != nil {
 		fmt.Println("创建自定义Watermarker出错:", err)
@@ -38,7 +31,7 @@ func main() {
 	defer file.Close()
 
 	// 为图像添加水印
-	watermarkedData, err := wm2.AddWatermark(file, "image/jpeg")
+	watermarkedData, err := wm.AddWatermark(file, "image/jpeg")
 	if err != nil {
 		fmt.Println("添加水印出错:", err)
 		return
