@@ -58,8 +58,10 @@ func main() {
 ![12.jpg](assets/1.jpg?t=1689736488340)
 加上水印
 ![12.jpg](assets/watermarked_image.jpg?t=1689736488340)
+
 GIF原图
 ![2.gif](assets/2.gif)
+
 加上水印
 ![watermarked_image.gif](assets/watermarked_image.gif)
 
