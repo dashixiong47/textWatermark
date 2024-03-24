@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsccossgm7ebk"]
+
+[ext_resource type="Script" path="res://天体/恒星/star.gd" id="1_8p58x"]
+[ext_resource type="Texture2D" uid="uid://bixwnfcv5hksd" path="res://asset/Terran.png" id="2_bpbic"]
+
+[node name="planet" type="RigidBody2D" groups=["bodies"]]
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource("1_8p58x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bpbic")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://bv00mk7byoiae"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_a8cnq"]
+[ext_resource type="Texture2D" uid="uid://cj608o2shuju3" path="res://asset/Galaxy Background.png" id="1_ic7fu"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="2_afl5n"]
+[ext_resource type="PackedScene" uid="uid://dwdqvo7gxg1x0" path="res://天体/恒星/star.tscn" id="4_f0qug"]
+[ext_resource type="PackedScene" uid="uid://bsccossgm7ebk" path="res://天体/行星/planet.tscn" id="5_th80p"]
+[ext_resource type="PackedScene" uid="uid://d2fau8mcld7n5" path="res://天体/黑洞/black_hole.tscn" id="6_scnmu"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_a8cnq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(332.875, 848.437)
+scale = Vector2(5.89556, 5.89556)
+texture = ExtResource("1_ic7fu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_afl5n")
+
+[node name="planet" parent="." instance=ExtResource("5_th80p")]
+position = Vector2(108, -84)
+
+[node name="star" parent="." instance=ExtResource("4_f0qug")]
+mass = 10.0
+
+[node name="black_hole" parent="." instance=ExtResource("6_scnmu")]
+position = Vector2(21, 1261)

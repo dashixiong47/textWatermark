@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2fau8mcld7n5"]
+
+[ext_resource type="Script" path="res://天体/黑洞/black_hole.gd" id="1_de4eq"]
+[ext_resource type="Texture2D" uid="uid://n6vg6he4hkpi" path="res://asset/Black_hole.png" id="2_gmo7x"]
+
+[node name="black_hole" type="RigidBody2D" groups=["bodies"]]
+mass = 50.0
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource("1_de4eq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_gmo7x")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv00mk7byoiae"]
+
+[ext_resource type="Texture2D" uid="uid://cj608o2shuju3" path="res://asset/Galaxy Background.png" id="1_ic7fu"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="2_afl5n"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(766, 806)
+scale = Vector2(1.9375, 1.9375)
+texture = ExtResource("1_ic7fu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_afl5n")
